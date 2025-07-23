@@ -23,9 +23,9 @@
   "scripts": {
     "build": "tsc",
     "build:check": "tsc --noEmit",
-    "test": "npm run build:check && npm run test:integration",
+    "test": "pnpm run build:check && pnpm run test:integration",
     "test:integration": "node test/integration.js",
-    "test:package": "npm run build && npm pack && npm run test:unpacked",
+    "test:package": "pnpm run build && pnpm pack && pnpm run test:unpacked",
     "test:unpacked": "node test/package-test.js",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run clean && npm run build",
@@ -33,7 +33,7 @@
     "lint:fix": "eslint \"src/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
-    "check": "npm run lint && npm run format:check && npm run build:check"
+    "check": "pnpm run lint && pnpm run format:check && pnpm run build:check"
   },
   "keywords": [
     "capa",

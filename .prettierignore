@@ -19,8 +19,3 @@ yarn.lock
 
 # Config files
 *.json
-*.yml
-*.yaml
-
-# Test files (optional - remove if you want to format tests)
-test/ 
