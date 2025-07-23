@@ -19,7 +19,15 @@ npm install partners-sdk
 
 ```typescript
 import { PartnerV2Client } from 'capa-sdk';
-import { fiatCurrency, blockchainSymbol, tokenSymbol, userType } from 'capa-sdk';
+import { 
+    fiatCurrency, 
+    blockchainSymbol, 
+    tokenSymbol, 
+    userType, 
+    transactionType, 
+    transactionStatus, 
+    sortOrder 
+} from 'capa-sdk';
 
 // Initialize the client
 const client = new PartnerV2Client(
@@ -129,17 +137,22 @@ console.log("User created:", userRes.data?.userId);
 Query and manage transactions.
 
 ```typescript
-// List transactions
-const transactionsRes = await client.transactions.listPartnerUserTransactions(
-    undefined,      // transaction id (optional)
-    undefined,      // status filter (optional)
-    "ON_RAMP",      // transaction type (optional)
-    "MXN",          // fiat currency (optional)
-    undefined,      // userId filter (optional)
-    undefined,      // partnerId filter (optional)
-    1,              // skip (pagination)(optional)
-    10              // limit (optional)
-);
+// List transactions using the new interface
+const transactionsRes = await client.transactions.listPartnerUserTransactions({
+    type: transactionType.ON_RAMP,
+    fiatCurrency: fiatCurrency.MXN,
+    userId: "your-user-id",
+    skip: 1,
+    limit: 10,
+    sortBy: "createdAt",
+    sortOrder: sortOrder.DESC
+});
+
+// List transactions with status filter
+const pendingTransactions = await client.transactions.listPartnerUserTransactions({
+    status: transactionStatus.PENDING,
+    type: transactionType.ON_RAMP
+});
 
 // Cancel a transaction
 const cancelRes = await client.transactions.cancelPartnerTransaction(
@@ -308,16 +321,13 @@ async function main() {
         console.log("Off-ramp transaction:", offRampRes.data?.id);
 
         // 5. List user transactions
-        const transactionsRes = await client.transactions.listPartnerUserTransactions(
-            undefined, // id
-            undefined, // status
-            "ON_RAMP", // type
-            "MXN",     // fiatCurrency
-            userId,    // userId
-            undefined, // partnerId
-            1,         // skip
-            20         // limit
-        );
+        const transactionsRes = await client.transactions.listPartnerUserTransactions({
+            type: transactionType.ON_RAMP,
+            fiatCurrency: fiatCurrency.MXN,
+            userId: userId,
+            skip: 1,
+            limit: 20
+        });
 
         console.log(`Found ${transactionsRes.data?.data?.length} transactions`);
 

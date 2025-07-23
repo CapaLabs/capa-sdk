@@ -27,5 +27,25 @@ export type { TransactionResponseData } from './models/TransactionResponseData';
 export type { UpdatePartnerWebhookSettingsBody } from './models/UpdatePartnerWebhookSettingsBody';
 export { UploadPartnerOwnKYCBody } from './models/UploadPartnerOwnKYCBody';
 
+// Export enums and interfaces from Const.ts
+export {
+  fiatCurrency,
+  blockchainSymbol,
+  tokenSymbol,
+  country,
+  userType,
+  docTemplateName,
+  language,
+  transactionType,
+  transactionFlow,
+  documentType,
+  transactionStatus,
+  sortOrder,
+} from './models/Const';
+export type { ListTransactionsParams } from './models/Const';
+
 export { CapaV2Client } from './CapaV2Client';
 export type { CapaClientConfig, CapaClientServices } from './CapaV2Client';
+
+// Export services
+export * from './services';

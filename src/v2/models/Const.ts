@@ -111,3 +111,79 @@ export enum documentType {
   VOTER_ID = 'VOTER_ID',
   PASSPORT = 'PASSPORT',
 }
+
+/**
+ * Transaction status values
+ */
+export enum transactionStatus {
+  FAILED = 'FAILED',
+  COMPLETED = 'COMPLETED',
+  PENDING = 'PENDING',
+  PENDING_PAYMENT = 'PENDING_PAYMENT',
+  FIAT_PAYMENT_RECEIVED = 'FIAT_PAYMENT_RECEIVED',
+  FIAT_RECEIVED = 'FIAT_RECEIVED',
+  CRYPTO_RECEIVED = 'CRYPTO_RECEIVED',
+  CRYPTO_NOT_RECEIVED = 'CRYPTO_NOT_RECEIVED',
+  COMPLETED_CRYPTO_RECEIVAL = 'COMPLETED_CRYPTO_RECEIVAL',
+  EXPIRED = 'EXPIRED',
+  CANCELLED = 'CANCELLED',
+  IN_PROGRESS = 'IN_PROGRESS',
+  BANK_TRANSFER_PENDING = 'BANK_TRANSFER_PENDING',
+  READY_BANK_TRANSFER = 'READY_BANK_TRANSFER',
+  AWAITING_MANUAL_CRYPTO_TRANSFER = 'AWAITING_MANUAL_CRYPTO_TRANSFER',
+  AWAITING_MANUAL_FIAT_TRANSFER = 'AWAITING_MANUAL_FIAT_TRANSFER',
+}
+
+/**
+ * Sort order for listing transactions
+ */
+export enum sortOrder {
+  ASC = 'asc',
+  DESC = 'desc',
+}
+
+/**
+ * Interface for listing transactions parameters
+ */
+export interface ListTransactionsParams {
+  /**
+   * Transaction ID filter
+   */
+  id?: string;
+  /**
+   * Transaction status filter
+   */
+  status?: transactionStatus;
+  /**
+   * Transaction type filter
+   */
+  type?: transactionType;
+  /**
+   * Fiat currency filter
+   */
+  fiatCurrency?: fiatCurrency;
+  /**
+   * User ID filter
+   */
+  userId?: string;
+  /**
+   * Partner ID filter
+   */
+  partnerId?: string;
+  /**
+   * Number of records to skip for pagination
+   */
+  skip?: number;
+  /**
+   * Maximum number of records to return
+   */
+  limit?: number;
+  /**
+   * Field to sort by
+   */
+  sortBy?: string;
+  /**
+   * Sort order (ascending or descending)
+   */
+  sortOrder?: sortOrder;
+}
