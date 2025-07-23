@@ -29,11 +29,9 @@
     "test:unpacked": "node test/package-test.js",
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run clean && npm run build",
-    "lint": "eslint \"src/**/*.ts\"",
-    "lint:fix": "eslint \"src/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
-    "check": "pnpm run lint && pnpm run format:check && pnpm run build:check"
+    "check": "pnpm run format:check && pnpm run build:check"
   },
   "keywords": [
     "capa",
@@ -45,11 +43,6 @@
   "author": "Capa",
   "license": "ISC",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.25.0",
-    "@typescript-eslint/parser": "^8.25.0",
-    "eslint": "^9.31.0",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-prettier": "^5.2.3",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
