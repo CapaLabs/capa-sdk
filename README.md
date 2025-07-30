@@ -2,12 +2,10 @@
 
 A TypeScript/JavaScript SDK for integrating with the Capa API v2. This SDK provides a comprehensive interface for managing cryptocurrency on-ramp and off-ramp transactions, user management, KYC verification, and more.
 
-BEFORE RELEASE: GO TO THIS README AND FIX EXPORTS
-
 ## Installation
 
 ```bash
-npm install partners-sdk
+npm install @capa/sdk
 ```
 
 ## Dependencies
@@ -18,7 +16,7 @@ npm install partners-sdk
 ## Quick Start
 
 ```typescript
-import { PartnerV2Client } from 'capa-sdk';
+import { PartnerV2Client } from '@capa/sdk';
 import { 
     fiatCurrency, 
     blockchainSymbol, 
@@ -27,7 +25,7 @@ import {
     transactionType, 
     transactionStatus, 
     sortOrder 
-} from 'capa-sdk';
+} from '@capa/sdk';
 
 // Initialize the client
 const client = new PartnerV2Client(
@@ -194,7 +192,7 @@ The SDK exports several enums for use in your applications:
 ### Supported Fiat Currencies
 
 ```typescript
-import { fiatCurrency } from 'partners-sdk';
+import { fiatCurrency } from '@capa/sdk';
 
 fiatCurrency.MXN  // Mexican Peso
 fiatCurrency.DOP  // Dominican Peso
@@ -203,7 +201,7 @@ fiatCurrency.DOP  // Dominican Peso
 ### Supported Blockchains
 
 ```typescript
-import { blockchainSymbol } from 'partners-sdk';
+import { blockchainSymbol } from '@capa/sdk';
 
 blockchainSymbol.ETH   // Ethereum
 blockchainSymbol.SOL   // Solana
@@ -218,7 +216,7 @@ blockchainSymbol.OP    // Optimism
 ### Supported Tokens
 
 ```typescript
-import { tokenSymbol } from 'partners-sdk';
+import { tokenSymbol } from '@capa/sdk';
 
 tokenSymbol.USDC    // USD Coin
 tokenSymbol.USDT    // Tether
@@ -231,7 +229,7 @@ tokenSymbol.BNB     // Binance Coin
 ### User Types
 
 ```typescript
-import { userType } from 'partners-sdk';
+import { userType } from '@capa/sdk';
 
 userType.INDIVIDUAL  // Individual user
 userType.BUSINESS    // Business user
@@ -240,7 +238,7 @@ userType.BUSINESS    // Business user
 ### Countries
 
 ```typescript
-import { country } from 'partners-sdk';
+import { country } from '@capa/sdk';
 
 country.MX  // Mexico
 country.DO  // Dominican Republic
@@ -259,7 +257,7 @@ import {
     fiatCurrency,
     tokenSymbol,
     userType
-} from 'partners-sdk';
+} from '@capa/sdk';
 
 async function main() {
     // Initialize client
@@ -367,7 +365,7 @@ import {
     CreatePartnerOnRampTransactionV2RequestBody,
     OnRampPartnerV2Response,
     GetPartnerQuoteExchangeV2Response
-} from 'partners-sdk';
+} from '@capa/sdk';
 ```
 
 ## Environment URLs
