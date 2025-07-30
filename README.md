@@ -16,7 +16,7 @@ npm install @capa-fi/sdk
 ## Quick Start
 
 ```typescript
-import { PartnerV2Client } from '@capa-fi/sdk';
+import { CapaV2Client } from '@capa-fi/sdk';
 import { 
     fiatCurrency, 
     blockchainSymbol, 
@@ -28,9 +28,11 @@ import {
 } from '@capa-fi/sdk';
 
 // Initialize the client
-const client = new PartnerV2Client(
-    "https://staging-api.capa.fi", // Base URL
-    "your-partner-api-key"         // Partner API Key
+const client = new CapaV2Client(
+   {
+    baseUrl: "https://production-api.capa.fi",
+    partnerApiKey: "your-partner-api-key" 
+   },
 );
 
 // Create an on-ramp transaction
@@ -51,9 +53,11 @@ console.log("Transaction created:", onRampRes.data?.id);
 The SDK requires a Partner API Key for authentication. You'll receive this key when you register as a partner with Capa.
 
 ```typescript
-const client = new PartnerV2Client(
-    "https://api.capa.fi",           // Production URL
-    "your-partner-api-key"           // Your API key
+const client = new CapaV2Client(
+   {
+    baseUrl: "https://production-api.capa.fi", // production URL
+    partnerApiKey: "your-partner-api-key" // your API key
+   },
 );
 ```
 
@@ -250,20 +254,23 @@ Here's a complete example showing common SDK usage patterns:
 
 ```typescript
 import { 
-    PartnerV2Client,
+    CapaV2Client,
     CreatePartnerOffRampTransactionV2RequestBody,
     CreatePartnerUserBody,
     blockchainSymbol,
     fiatCurrency,
     tokenSymbol,
+    transactionType,
     userType
 } from '@capa-fi/sdk';
 
 async function main() {
     // Initialize client
-    const client = new PartnerV2Client(
-        "https://staging-api.capa.fi",
-        "your-partner-api-key"
+    const client = new CapaV2Client(
+        {
+            baseUrl: "https://production-api.capa.fi",
+            partnerApiKey: "your-partner-api-key" 
+        },
     );
 
     try {
@@ -298,7 +305,7 @@ async function main() {
             blockchainSymbol: blockchainSymbol.ETH,
             tokenSymbol: tokenSymbol.USDC,
             fiatAmount: 1000,
-            destinationWalletAddress: your-wallet-address"
+            destinationWalletAddress: "your-wallet-address"
         });
 
         console.log("On-ramp transaction:", onRampRes.data?.id);
