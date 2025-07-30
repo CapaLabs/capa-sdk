@@ -1,5 +1,5 @@
 {
-  "name": "@capa/sdk",
+  "name": "@capa-fi/sdk",
   "version": "0.1.0",
   "description": "Official Capa SDK for Node.js and TypeScript",
   "main": "dist/index.js",

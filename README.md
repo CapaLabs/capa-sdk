@@ -5,7 +5,7 @@ A TypeScript/JavaScript SDK for integrating with the Capa API v2. This SDK provi
 ## Installation
 
 ```bash
-npm install @capa/sdk
+npm install @capa-fi/sdk
 ```
 
 ## Dependencies
@@ -16,7 +16,7 @@ npm install @capa/sdk
 ## Quick Start
 
 ```typescript
-import { PartnerV2Client } from '@capa/sdk';
+import { PartnerV2Client } from '@capa-fi/sdk';
 import { 
     fiatCurrency, 
     blockchainSymbol, 
@@ -25,7 +25,7 @@ import {
     transactionType, 
     transactionStatus, 
     sortOrder 
-} from '@capa/sdk';
+} from '@capa-fi/sdk';
 
 // Initialize the client
 const client = new PartnerV2Client(
@@ -192,7 +192,7 @@ The SDK exports several enums for use in your applications:
 ### Supported Fiat Currencies
 
 ```typescript
-import { fiatCurrency } from '@capa/sdk';
+import { fiatCurrency } from '@capa-fi/sdk';
 
 fiatCurrency.MXN  // Mexican Peso
 fiatCurrency.DOP  // Dominican Peso
@@ -201,7 +201,7 @@ fiatCurrency.DOP  // Dominican Peso
 ### Supported Blockchains
 
 ```typescript
-import { blockchainSymbol } from '@capa/sdk';
+import { blockchainSymbol } from '@capa-fi/sdk';
 
 blockchainSymbol.ETH   // Ethereum
 blockchainSymbol.SOL   // Solana
@@ -216,7 +216,7 @@ blockchainSymbol.OP    // Optimism
 ### Supported Tokens
 
 ```typescript
-import { tokenSymbol } from '@capa/sdk';
+import { tokenSymbol } from '@capa-fi/sdk';
 
 tokenSymbol.USDC    // USD Coin
 tokenSymbol.USDT    // Tether
@@ -229,7 +229,7 @@ tokenSymbol.BNB     // Binance Coin
 ### User Types
 
 ```typescript
-import { userType } from '@capa/sdk';
+import { userType } from '@capa-fi/sdk';
 
 userType.INDIVIDUAL  // Individual user
 userType.BUSINESS    // Business user
@@ -238,7 +238,7 @@ userType.BUSINESS    // Business user
 ### Countries
 
 ```typescript
-import { country } from '@capa/sdk';
+import { country } from '@capa-fi/sdk';
 
 country.MX  // Mexico
 country.DO  // Dominican Republic
@@ -257,7 +257,7 @@ import {
     fiatCurrency,
     tokenSymbol,
     userType
-} from '@capa/sdk';
+} from '@capa-fi/sdk';
 
 async function main() {
     // Initialize client
@@ -365,7 +365,7 @@ import {
     CreatePartnerOnRampTransactionV2RequestBody,
     OnRampPartnerV2Response,
     GetPartnerQuoteExchangeV2Response
-} from '@capa/sdk';
+} from '@capa-fi/sdk';
 ```
 
 ## Environment URLs
