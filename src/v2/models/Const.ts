@@ -4,6 +4,8 @@
 export enum fiatCurrency {
   MXN = 'MXN',
   DOP = 'DOP',
+  USD = 'USD',
+  EUR = 'EUR',
 }
 
 /**
