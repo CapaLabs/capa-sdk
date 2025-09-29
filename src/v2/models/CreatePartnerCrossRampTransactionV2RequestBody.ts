@@ -26,6 +26,10 @@ export type CreatePartnerCrossRampTransactionV2RequestBody = {
    */
   premiumSpread?: number;
   /**
+   * Quote id of a previously calculated quote
+   */
+  quoteId?: string;
+  /**
    * Bank account information for the transaction
    */
   userBankInformation: {
@@ -37,5 +41,21 @@ export type CreatePartnerCrossRampTransactionV2RequestBody = {
      * Bank account identifier
      */
     accountIdentifier: string;
+    /**
+     * Account type (mandatory for Dominican Republic)
+     */
+    accountType?: string;
+    /**
+     * Bank name (mandatory for Dominican Republic)
+     */
+    bankName?: string;
+    /**
+     * Document identifier (mandatory for Dominican Republic)
+     */
+    documentIdentifier?: string;
+    /**
+     * Document type (mandatory for Dominican Republic)
+     */
+    documentType?: string;
   };
 };
