@@ -22,3 +22,4 @@ export type CreatePartnerCrossRampQuoteBody = {
    */
   premiumSpread?: number;
 };
+

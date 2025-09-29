@@ -32,7 +32,7 @@ export type CreatePartnerCrossRampTransactionV2RequestBody = {
   /**
    * Bank account information for the transaction
    */
-  userBankInformation: {
+  targetBankAccount: {
     /**
      * Country code for the bank account
      */
@@ -42,20 +42,53 @@ export type CreatePartnerCrossRampTransactionV2RequestBody = {
      */
     accountIdentifier: string;
     /**
-     * Account type (mandatory for Dominican Republic)
+     * Routing number (mandatory for United States)
+     */
+    routingNumber?: string;
+    /**
+     * BIC (mandatory for SEPA countries)
+     */
+    bic?: string;
+    /**
+     * Account type (mandatory for Dominican Republic and United States)
      */
     accountType?: string;
     /**
-     * Bank name (mandatory for Dominican Republic)
+     * Bank name (mandatory for Dominican Republic and United States)
      */
     bankName?: string;
     /**
-     * Document identifier (mandatory for Dominican Republic)
+     * Document identifier (mandatory for Dominican Republic and United States)
      */
     documentIdentifier?: string;
     /**
-     * Document type (mandatory for Dominican Republic)
+     * Document type (mandatory for Dominican Republic and United States)
      */
     documentType?: string;
+    /**
+     * Physical address (mandatory for United States)
+     */
+    address?: {
+      streetLine1: string;
+      streetLine2?: string;
+      city: string;
+      state: string;
+      postalCode: string;
+      country: string;
+    };
+    /**
+     * Account holder (mandatory for United States and SEPA countries)
+     */
+    accountHolder?: {
+    /**
+     * Type (BUSINESS or INDIVIDUAL)
+     */
+      type: string,
+    /**
+     * Name of the account holder
+     */
+      name: string,
+    }
   };
 };
+

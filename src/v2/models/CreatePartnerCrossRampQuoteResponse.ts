@@ -38,3 +38,4 @@ export type CreatePartnerCrossRampQuoteResponse = {
    */
   createdAt: string;
 };
+

@@ -55,3 +55,4 @@ export type CrossRampPartnerV2Response = {
    */
   bankAccount: BankAccountResponse;
 };
+

@@ -130,7 +130,7 @@ const crossRampRes = await client.crossRamp.createPartnerCrossRamp({
     sourceCurrency: fiatCurrency.MXN,
     targetCurrency: fiatCurrency.USD,
     sourceAmount: 1000, // 1000 MXN
-    userBankInformation: {
+    targetBankAccount: {
         country: "US",
         accountIdentifier: "1234567890"
     }
