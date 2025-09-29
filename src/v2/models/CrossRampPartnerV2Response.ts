@@ -47,12 +47,12 @@ export type CrossRampPartnerV2Response = {
    */
   completedAt: string | null;
   /**
-   * User bank account information
+   * Source bank account information
    */
-  userBankInformation: BankAccountResponse;
+  sourceBankAccount: BankAccountResponse;
   /**
-   * Bank account information
+   * Target bank account information
    */
-  bankAccount: BankAccountResponse;
+  targetBankAccount: BankAccountResponse;
 };
 
