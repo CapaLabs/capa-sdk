@@ -7,6 +7,7 @@ import {
   UsersService,
   WebhookSettingsService,
   TransactionsService,
+  CrossRampService,
 } from './services';
 
 export interface CapaClientConfig {
@@ -22,6 +23,7 @@ export interface CapaClientServices {
   users: UsersService;
   webhookSettings: WebhookSettingsService;
   transactions: TransactionsService;
+  crossRamp: CrossRampService;
 }
 
 export class CapaV2Client {
@@ -35,6 +37,7 @@ export class CapaV2Client {
   public users: UsersService;
   public webhookSettings: WebhookSettingsService;
   public transactions: TransactionsService;
+  public crossRamp: CrossRampService;
 
   constructor(config: CapaClientConfig) {
     this.baseUrl = config.baseUrl;
@@ -65,5 +68,6 @@ export class CapaV2Client {
       this.partnerApiKey,
       openApiConfig
     );
+    this.crossRamp = new CrossRampService(this.partnerApiKey, openApiConfig);
   }
 }

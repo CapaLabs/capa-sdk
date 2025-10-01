@@ -5,3 +5,4 @@ export { KycService } from './KycService';
 export { UsersService } from './UsersService';
 export { WebhookSettingsService } from './WebhookSettingsService';
 export { TransactionsService } from './TransactionsService';
+export { CrossRampService } from './CrossRampService';

@@ -8,6 +8,8 @@ export type { CancelTransactionHttpResponse } from './models/CancelTransactionHt
 export { CreatePartnerDirectLinkBodyV2 } from './models/CreatePartnerDirectLinkBodyV2';
 export { CreatePartnerOffRampTransactionV2RequestBody } from './models/CreatePartnerOffRampTransactionV2RequestBody';
 export { CreatePartnerOnRampTransactionV2RequestBody } from './models/CreatePartnerOnRampTransactionV2RequestBody';
+export { CreatePartnerCrossRampTransactionV2RequestBody } from './models/CreatePartnerCrossRampTransactionV2RequestBody';
+export { CreatePartnerCrossRampQuoteBody } from './models/CreatePartnerCrossRampQuoteBody';
 export { CreatePartnerUserBody } from './models/CreatePartnerUserBody';
 export type { CreatePartnerUserHttpResponse } from './models/CreatePartnerUserHttpResponse';
 export { CreateVerificationLinkBody } from './models/CreateVerificationLinkBody';
@@ -19,6 +21,9 @@ export { GetPartnerQuoteExchangeV2Response } from './models/GetPartnerQuoteExcha
 export type { GetUserVerificationResultHttpResponse } from './models/GetUserVerificationResultHttpResponse';
 export { OffRampPartnerV2Response } from './models/OffRampPartnerV2Response';
 export { OnRampPartnerV2Response } from './models/OnRampPartnerV2Response';
+export { CrossRampPartnerV2Response } from './models/CrossRampPartnerV2Response';
+export { CreatePartnerCrossRampQuoteResponse } from './models/CreatePartnerCrossRampQuoteResponse';
+export { GetPartnerCrossRampQuoteExchangeV2Response } from './models/GetPartnerCrossRampQuoteExchangeV2Response';
 export type { PaginatedTransactionResponse } from './models/PaginatedTransactionResponse';
 export type { PartnerWebhookSettingsHttpResponse } from './models/PartnerWebhookSettingsHttpResponse';
 export type { TransactionBankAccountResponse } from './models/TransactionBankAccountResponse';

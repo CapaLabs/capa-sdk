@@ -119,6 +119,51 @@ console.log("Exchange rate:", quoteRes.data?.exchangeRate);
 console.log("Estimated crypto amount:", quoteRes.data?.cryptoAmount);
 ```
 
+### Cross-Ramp Service
+
+Convert between different fiat currencies (fiat-to-fiat conversion).
+
+```typescript
+// Create a cross-ramp transaction (MXN to USD)
+const crossRampRes = await client.crossRamp.createPartnerCrossRamp({
+    userId: "your-user-id",
+    sourceCurrency: fiatCurrency.MXN,
+    targetCurrency: fiatCurrency.USD,
+    sourceAmount: 1000, // 1000 MXN
+    targetBankAccount: {
+        country: "US",
+        accountIdentifier: "1234567890"
+    }
+});
+
+console.log("Transaction created:", crossRampRes.data?.id);
+console.log("Exchange rate:", crossRampRes.data?.exchangeRate);
+console.log("Target amount:", crossRampRes.data?.targetAmount);
+
+// Get exchange rate for cross-ramp conversion
+const crossRampQuoteRes = await client.crossRamp.getPartnerCrossRampQuoteRate(
+    fiatCurrency.MXN,  // Source currency
+    fiatCurrency.USD,  // Target currency
+    1000,              // Source amount (optional)
+    undefined,         // Target amount (optional)
+    0.01              // Premium spread (optional)
+);
+
+console.log("Current exchange rate:", crossRampQuoteRes.data?.exchangeRate);
+console.log("Estimated USD amount:", crossRampQuoteRes.data?.targetAmount);
+
+// Create a quote for later use
+const quoteRes = await client.crossRamp.createPartnerCrossRampQuote({
+    sourceCurrency: fiatCurrency.DOP,
+    targetCurrency: fiatCurrency.EUR,
+    sourceAmount: 5000,
+    premiumSpread: 0.005
+});
+
+console.log("Quote ID:", quoteRes.data?.id);
+console.log("Quote expires at:", quoteRes.data?.expiresAt);
+```
+
 ### Users Service
 
 Manage user accounts and profiles.
