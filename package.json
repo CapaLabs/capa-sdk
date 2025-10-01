@@ -1,6 +1,6 @@
 {
   "name": "@capa-fi/sdk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Official Capa SDK for Node.js and TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
